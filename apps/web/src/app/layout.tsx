@@ -2,9 +2,20 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import localfont from "next/font/local" 
 
 
 const inter = Inter({ subsets: ["latin"] });
+
+const positiveForward = localfont({
+  src: [
+    {
+      path: '../../public/fonts/PositiveForward.otf',
+      weight: '700',
+    },
+  ],
+  variable: '--font-positiveForward',
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,9 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`bg-black ${positiveForward.variable}`} 
+    >
       <body className={inter.className}>
-        <Navbar/>
+        <Navbar />
         {children}
       </body>
     </html>
