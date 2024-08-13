@@ -1,16 +1,44 @@
+'use client'
+
 import { FaUserCircle } from 'react-icons/fa';
 import Image from 'next/image';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoClose } from 'react-icons/io5';
+import { useState } from 'react';
+
+interface SearchForm{
+  search: string;
+}
 
 export default function Navbar() {
-  return (
-    <div className="bg-white border flex justify-between h-15 items-center ">
-      
-        <p className="text-black text-4xl font-extrabold ml-10">
-          Ticket<span className=" text-yellow-500">Zone.</span>
-        </p>
-      
 
-      <div className="text-black flex gap-28 ">
+  const data = [
+    {
+      text: 'Tentang Kami'
+    },
+    {
+      text: 'Hubungi Kami'
+    }
+  ]
+
+  const [isMenu, setMenu] = useState(false)
+  const [closeMenu, setCloseMenu] = useState(false)
+
+  const openMenu = () => {
+    setMenu(!isMenu)
+  }
+
+  const handleCloseMenu = () => {
+    
+  }
+
+  return (
+    <div className="bg-white sm:w-full overflow-hidden border flex justify-between h-15 items-center ">
+      <p className="text-black text-4xl font-extrabold ml-10">
+        Ticket<span className=" text-yellow-500">Zone.</span>
+      </p>
+
+      <div className="text-black lg:flex gap-28 hidden ">
         <div className="flex items-center  font-light gap-8 ">
           <p>Explore</p>
           <p>Sell</p>
@@ -21,6 +49,18 @@ export default function Navbar() {
           </button>
         </div>
       </div>
+      <GiHamburgerMenu onClick={openMenu} className='lg:hidden'/>
+      {isMenu && (
+        <div className="fixed h-screen w-full inset-0 z-50 bg-white/30">
+          <div className="flex justify-center items-center h-screen">
+            <div className="bg-gray-100 text-black">
+              <p>Login</p>
+              <p>Register</p>
+              <IoClose onClick={openMenu} className=''/>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
