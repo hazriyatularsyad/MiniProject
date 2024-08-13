@@ -1,29 +1,45 @@
+'use client'
+
 import { FaUserCircle } from 'react-icons/fa';
 import Image from 'next/image';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoClose } from 'react-icons/io5';
+import { useState } from 'react';
 import Link from 'next/link';
-import { FaSearch } from 'react-icons/fa';
-import Avatar from './avatar';
+
+interface SearchForm{
+  search: string;
+}
 
 export default function Navbar() {
-  return (
-    <div className="bg-white border flex justify-between h-15 items-center ">
-      <div className="flex pl-10 w-1/3">
-        <Link href="/">
-          <Image src="/ticoncert.png" width={100} height={100} alt="logo" />
-        </Link>
-      </div>
-      <div className="py-3 flex justify-end w-1/3 gap-2">
-        <FaSearch className="text-black h-10 w-7" />
-        <input
-          type="search"
-          name=""
-          id=""
-          placeholder="search"
-          className="border-black text-gray-950 h-[40px] w-75 pr-10 p-3"
-        />
-      </div>
 
-      <div className="text-black flex gap-28 w-1/3 justify-center ">
+  const data = [
+    {
+      text: 'Tentang Kami'
+    },
+    {
+      text: 'Hubungi Kami'
+    }
+  ]
+
+  const [isMenu, setMenu] = useState(false)
+  const [closeMenu, setCloseMenu] = useState(false)
+
+  const openMenu = () => {
+    setMenu(!isMenu)
+  }
+
+  const handleCloseMenu = () => {
+    
+  }
+
+  return (
+    <div className="bg-white sm:w-full overflow-hidden border flex justify-between h-15 items-center ">
+      <p className="text-black text-4xl font-extrabold ml-10">
+        Ticket<span className=" text-yellow-500">Zone.</span>
+      </p>
+
+      <div className="text-black lg:flex gap-28 hidden ">
         <div className="flex items-center  font-light gap-8 ">
           <p className="hover:scale-125">Explore</p>
           <p className="hover:scale-125">Sell</p>
@@ -37,6 +53,18 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
+      <GiHamburgerMenu onClick={openMenu} className='lg:hidden'/>
+      {isMenu && (
+        <div className="fixed h-screen w-full inset-0 z-50 bg-white/30">
+          <div className="flex justify-center items-center h-screen">
+            <div className="bg-gray-100 text-black">
+              <p>Login</p>
+              <p>Register</p>
+              <IoClose onClick={openMenu} className=''/>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
