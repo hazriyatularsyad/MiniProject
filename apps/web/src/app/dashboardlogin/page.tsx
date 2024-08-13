@@ -1,11 +1,12 @@
 import CarouselComponent from '@/components/carousel';
 import Navbar from '@/components/navbar';
+import NavbarLogin from '@/components/navbarlogin';
 import Image from 'next/image';
 
-export default function Dashboard() {
+export default function DashboardLogin() {
   return (
     <div className="bg-black py-11 text-white">
-      <Navbar/>
+      <NavbarLogin/>
       <div className="flex flex-col py-11 items-center justify-center text-center">
         <h1 className="text-5xl font-bold font-positiveForward">ON SHOWING EVENT</h1>
 
@@ -128,7 +129,7 @@ export default function Dashboard() {
                 <p className="text-gray-700 text-base">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Voluptatibus quia, nulla! Maiores et perferendis eaque,
-                  exercitationem praesentium
+                  exercitationem praesentium nihil.
                 </p>
               </div>
             </div>

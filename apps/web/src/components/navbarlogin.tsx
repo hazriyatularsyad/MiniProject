@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { FaSearch } from 'react-icons/fa';
 import Avatar from './avatar';
 
-export default function Navbar() {
+export default function NavbarLogin() {
   return (
     <div className="bg-white border flex justify-between h-15 items-center ">
       <div className="flex pl-10 w-1/3">
@@ -29,12 +29,7 @@ export default function Navbar() {
           <p className="hover:scale-125">Sell</p>
           <p className="hover:scale-125">Favorites</p>
           <p className="hover:scale-125">My Tickets</p>
-
-          <Link href="/signin">
-            <button className="mr-10 hover:before:bg-yellow-500 relative overflow-hidden border-black bg-black px-3 py-3 text-white shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-yellow-500 before:transition-all before:duration-500 hover:text-black hover:shadow-white hover:before:left-0 hover:before:w-full">
-              <span className="relative z-10">L O G I N</span>
-            </button>
-          </Link>
+          <Avatar />
         </div>
       </div>
     </div>
