@@ -90,7 +90,7 @@ export default function Dashboard() {
               </p>
             </div>
           </div>
-          <div className="ml-3 mt-5 ">
+          <div className="ml-3 mt-5">
             <p className="relative cursor-pointer text-l w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left">
               see more
             </p>
