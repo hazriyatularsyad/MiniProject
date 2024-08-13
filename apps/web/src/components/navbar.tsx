@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoClose } from 'react-icons/io5';
 import { useState } from 'react';
+import Link from 'next/link';
 
 interface SearchForm{
   search: string;
@@ -40,13 +41,16 @@ export default function Navbar() {
 
       <div className="text-black lg:flex gap-28 hidden ">
         <div className="flex items-center  font-light gap-8 ">
-          <p>Explore</p>
-          <p>Sell</p>
-          <p>Favorites</p>
-          <p>My Tickets</p>
-          <button className="mr-10 hover:before:bg-yellow-500 relative overflow-hidden border-black bg-black px-3 py-3 text-white shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-yellow-500 before:transition-all before:duration-500 hover:text-black hover:shadow-white hover:before:left-0 hover:before:w-full">
-            <span className="relative z-10">L O G I N</span>
-          </button>
+          <p className="hover:scale-125">Explore</p>
+          <p className="hover:scale-125">Sell</p>
+          <p className="hover:scale-125">Favorites</p>
+          <p className="hover:scale-125">My Tickets</p>
+
+          <Link href="/signin">
+            <button className="mr-10 hover:before:bg-yellow-500 relative overflow-hidden border-black bg-black px-3 py-3 text-white shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-yellow-500 before:transition-all before:duration-500 hover:text-black hover:shadow-white hover:before:left-0 hover:before:w-full">
+              <span className="relative z-10">L O G I N</span>
+            </button>
+          </Link>
         </div>
       </div>
       <GiHamburgerMenu onClick={openMenu} className='lg:hidden'/>
