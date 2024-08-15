@@ -1,13 +1,16 @@
 
 
-import CarouselComponent from "./carousel/page";
-import Dashboard from "./dashboard/page";
+
+import CarouselComponent from "@/components/carousel";
+
+import Header from "@/components/Header";
 
 
 export default function Home() {
   return (
     <>
-      <Dashboard />
+      {/* <Dashboard /> */}
+      <Header/>
       <CarouselComponent/>
     </>
   )

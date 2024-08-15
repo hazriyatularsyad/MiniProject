@@ -86,15 +86,15 @@ export default function CarouselComponent() {
       <p className="text-4xl text-white">
         <span className="text-yellow-500 font-extrabold">I</span> UPCOMING EVENT
       </p>
-      <div className="carousel w-full relative overflow-hidden mt-10">
+      <div className="carousel flex flex-wrap w-full relative overflow-hidden mt-10">
         <div className="flex gap-4 flex-col lg:flex-row ">
           {displayedSlides.map((slide, index) => (
             <div key={index}>
-              <div className="carousel-item lg:h-[35vh] w-full h-[40vh] rounded-xl bg-white overflow-hidden">
+              <div className="carousel-item flex flex-col lg:h-[35vh] w-full h-[40vh] rounded-xl bg-white overflow-hidden">
                 <Link href={slide.href}>
                   <Image
                     src={slide.src}
-                    className="w-full hover:scale-110 sm:h-[20vh] duration-300"
+                    className="w-full hover:scale-110 duration-300"
                     alt={slide.alt}
                     width={400}
                     height={400}
