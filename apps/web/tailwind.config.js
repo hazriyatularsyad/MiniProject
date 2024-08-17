@@ -4,7 +4,7 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/flowbite-react/**/*.js', // Include Flowbite content
+    './node_modules/flowbite-react/**/*.js', 
   ],
   theme: {
     extend: {
@@ -15,6 +15,6 @@ module.exports = {
   },
   plugins: [
     require('daisyui'),
-    require('flowbite/plugin'), // Correct way to include Flowbite plugin
+    require('flowbite/plugin'), 
   ],
 };
