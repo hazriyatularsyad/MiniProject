@@ -6,11 +6,10 @@ import { MdOutlinePayments } from 'react-icons/md';
 import { GoSearch } from 'react-icons/go';
 import { RxAvatar } from 'react-icons/rx';
 import { BsTicketPerforated } from 'react-icons/bs';
-import { LoginModal } from '../modal/loginModal';
-import { PopUp } from '@/components/PopUp';
 import Link from 'next/link';
+import ProfileUser from '@/components/profileUser';
 
-export default function BottomNav() {
+export default function UserBottomNav() {
   const [loginModal, setLoginModal] = useState(false);
 
   const handleLogin = () => {
@@ -30,21 +29,19 @@ export default function BottomNav() {
           <div className="flex flex-col items-center">
             <MdOutlinePayments className="text-xl" />
             <p className="text-xs">Transaksi</p>
-            {loginModal && <LoginModal />}
+            
           </div>
           <div className="flex flex-col items-center">
             <BsTicketPerforated onClick={handleLogin} className="text-xl" />
             <p className="text-xs">Tiket</p>
-            {loginModal && <LoginModal />}
+            
           </div>
           <div className="flex flex-col items-center">
             <GoSearch className="text-xl" />
             <p className="text-xs">Cari</p>
           </div>
           <div className="flex flex-col items-center">
-            <RxAvatar className="text-xl" onClick={handleLogin} />
-            <p className="text-xs">Profile</p>
-            {loginModal && <LoginModal />}
+            <ProfileUser/>
           </div>
         </div>
       </div>

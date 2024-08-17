@@ -16,10 +16,6 @@ interface SearchForm {
 export default function NavbarLogin() {
 
   const [profile, setProfile] = useState(false)
-  
-  const data = [
-    { text: "Username :"}
-  ]
 
   const handleProfile = () => {
     setProfile(!profile)

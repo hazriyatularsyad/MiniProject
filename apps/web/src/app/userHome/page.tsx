@@ -3,8 +3,10 @@ import CarouselComponent from '@/components/carousel';
 import Navbar from '@/components/navbar';
 import { Footer } from 'flowbite-react';
 import Image from 'next/image';
+import UserFooter from './_components/userFooter';
+import UserBottomNav from './_components/UserBottomNav';
 
-export default function Header() {
+export default function userHome() {
   return (
     <div className="bg-black text-white">
       <Navbar />
@@ -213,9 +215,12 @@ export default function Header() {
           </div>
         </div>
       </div>
+      <CarouselComponent />
+      <UserFooter/>
       <div className="">
-        <BottomNav />
+        <UserBottomNav/>
       </div>
+      
     </div>
   );
 }

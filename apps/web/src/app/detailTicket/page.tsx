@@ -15,22 +15,21 @@ export default function DetailTicket() {
 const [activeTab, setActiveTab] = useState(1);
 
   return (
-    <div className="min-h-screen">
+    <div className=" bg-white ">
       <Navbar />
       <div className=" px-7 container mx-auto py-5">
         <div className="lg:p-5 flex justify-center items-center">
           <Image
-            className="rounded-xl"
-            src="/b3.jpg"
+            className="rounded-xl lg:w-full lg:h-[50vh]"
+            src="/b2.jpg"
             alt="detail"
-            width={700}
-            height={400}
-            priority
+            width={500}
+            height={500}
           />
         </div>
 
-        <div className="lg:flex lg:flex-row-reverse lg:px-5 lg:w-full lg:h-[30vh] lg:mx-auto">
-          <div className="flex flex-col p-4 mt-12 bg-base-100 border-base-100 rounded-box ml-7 ">
+        <div className="lg:flex lg:flex-row-reverse lg:px-5 lg:w-full lg:h-full lg:mx-auto">
+          <div className="flex flex-col p-4 mt-12 shadow-2xl lg:h-[28vh] rounded-box lg:ml-7 text-black">
             <p className=" font-bold">ROMANSA PROJECT</p>
             <div className="inline-flex gap-2 mt-3">
               <MdOutlineDateRange />
@@ -49,20 +48,20 @@ const [activeTab, setActiveTab] = useState(1);
             </div>
           </div>
 
-          <div className="flex flex-col mt-5 shadow-xl lg:w-full ">
+          <div className="flex bg-white text-black flex-col mt-5 shadow-xl h-full p-4 lg:w-full">
             <div role="tablist" className="tabs tabs-lifted">
               <input
                 type="radio"
                 name="my_tabs_2"
                 role="tab"
-                className="tab text-base"
+                className="tab"
                 aria-label="Deskripsi"
                 checked={activeTab === 1}
                 onChange={() => setActiveTab(1)}
               />
               <div
                 role="tabpanel"
-                className={`tab-content bg-base-100 border-base-300 rounded-box p-6 ${activeTab === 1 ? 'block' : 'hidden'}`}
+                className={`tab-content rounded-box p-6 ${activeTab === 1 ? 'block' : 'hidden'} `}
               >
                 <p className="mt-5 text-balance">
                   Explosive Fest merupakan festival musik yang diselenggarakan
@@ -80,14 +79,14 @@ const [activeTab, setActiveTab] = useState(1);
                 type="radio"
                 name="my_tabs_2"
                 role="tab"
-                className="tab text-base"
+                className="tab lg:ml-2"
                 aria-label="Tiket"
                 checked={activeTab === 2}
                 onChange={() => setActiveTab(2)}
               />
               <div
                 role="tabpanel"
-                className={`tab-content bg-base-100 border-base-300 rounded-box p-6 ${activeTab === 2 ? 'block' : 'hidden'}`}
+                className={`tab-content  rounded-box p-6 ${activeTab === 2 ? 'block' : 'hidden'}`}
               >
                 <TicketInfo />
 
@@ -115,7 +114,7 @@ const [activeTab, setActiveTab] = useState(1);
           </div>
         </div>
       </div>
-      <BottomNav/>
+      <BottomNav />
     </div>
   );
 }
