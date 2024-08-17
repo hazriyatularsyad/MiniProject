@@ -4,15 +4,17 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/flowbite-react/**/*.js', // Include Flowbite content
   ],
   theme: {
     extend: {
       fontFamily: {
         positiveForward: ['var(--font-positiveForward)'],
-        
       },
     },
   },
-  plugins: [require('daisyui'),],
+  plugins: [
+    require('daisyui'),
+    require('flowbite/plugin'), // Correct way to include Flowbite plugin
+  ],
 };
-
