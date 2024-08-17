@@ -1,37 +1,18 @@
-'use client'
 
-import { FaUserCircle } from 'react-icons/fa';
-import Image from 'next/image';
+
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoClose } from 'react-icons/io5';
 import { useState } from 'react';
 import Link from 'next/link';
 
-interface SearchForm{
-  search: string;
-}
 
 export default function Navbar() {
 
-  const data = [
-    {
-      text: 'Tentang Kami'
-    },
-    {
-      text: 'Hubungi Kami'
-    }
-  ]
+  // const [isMenu, setMenu] = useState(false)
 
-  const [isMenu, setMenu] = useState(false)
-  const [closeMenu, setCloseMenu] = useState(false)
-
-  const openMenu = () => {
-    setMenu(!isMenu)
-  }
-
-  const handleCloseMenu = () => {
-    
-  }
+  // const openMenu = () => {
+  //   setMenu(!isMenu)
+  // }
 
   return (
     <div className="bg-white sm:w-full overflow-hidden border flex justify-between h-15 items-center ">
@@ -41,9 +22,9 @@ export default function Navbar() {
 
       <div className="text-black lg:flex gap-28 hidden ">
         <div className="flex items-center  font-light gap-8 ">
-          <p className="hover:scale-125">Explore</p>
-          <p className="hover:scale-125">Sell</p>
-          <p className="hover:scale-125">Favorites</p>
+          <Link href='/detailTicket'>
+          <p className="hover:scale-125 cursor-pointer">Explore</p>
+          </Link>
           <p className="hover:scale-125">My Tickets</p>
 
           <Link href="/signin">
@@ -51,20 +32,20 @@ export default function Navbar() {
               <span className="relative z-10">L O G I N</span>
             </button>
           </Link>
-        </div>
-      </div>
-      <GiHamburgerMenu onClick={openMenu} className='lg:hidden'/>
-      {isMenu && (
-        <div className="fixed h-screen w-full inset-0 z-50 bg-white/30">
+      {/* <GiHamburgerMenu onClick={openMenu} className=''/> */}
+      {/* {isMenu && (
+        <div className="fixed h-screen w-full inset-0 z-50 bg-black/30">
           <div className="flex justify-center items-center h-screen">
             <div className="bg-gray-100 text-black">
-              <p>Login</p>
-              <p>Register</p>
-              <IoClose onClick={openMenu} className=''/>
+              <p>Masuk</p>
+              <p>Daftar</p>
+              <IoClose onClick={openMenu} className='flex items-center'/>
             </div>
           </div>
         </div>
-      )}
+      )} */}
+        </div>
+      </div>
     </div>
   );
 }
