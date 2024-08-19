@@ -5,8 +5,9 @@ import { Field, Form, Formik } from 'formik';
 import * as yup from 'yup';
 import Image from 'next/image';
 import Link from 'next/link';
+import { registerUser } from '@/components/libs/action/user';
 
-interface IRegis {
+export interface IRegis {
   username: string;
   email: string;
   password: string;
@@ -25,12 +26,22 @@ export default function Register() {
     password: yup.string().required('Password is required'),
   });
 
+  const onRegisterUser = async (data: IRegis) => {
+  try {
+    const res = await registerUser(data)
+  } catch (error) {
+    console.log(error);
+    
+  }
+}
+
   return (
     <div>
       <Formik
         initialValues={initialValue}
         validationSchema={validateSchema}
         onSubmit={(value, action) => {
+          onRegisterUser(value);
           alert(JSON.stringify(value));
           action.resetForm();
         }}
@@ -47,6 +58,7 @@ export default function Register() {
               />
               <Form className="z-30 justify-center items-center flex">
                 <div className="flex shadow-xl w-[60vh] bg-white/80 rounded-xl gap-4 flex-col p-5 border ">
+                  <p className="text-3xl font-extrabold text-black">Register</p>
                   <label className="text-gray-800 text-xs block ">
                     Username
                   </label>
@@ -69,6 +81,12 @@ export default function Register() {
                     type="password"
                     placeholder="masukkan password"
                   />
+              <button
+                type="submit"
+                className="w-full py-3 px-4 tracking-wider text-sm rounded-md text-white bg-gray-700 hover:bg-gray-800 focus:outline-none"
+              >
+                Create your account
+              </button>
                 </div>
               </Form>
             </div>

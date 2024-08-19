@@ -26,11 +26,11 @@ model User {
   username    String        @unique
   email       String        @unique
   password    String
-  referal     String        @unique
-  point       Int
+  referal     String?       @unique
+  point       Int @default(0)
   avatar      String?
-  phone       Int
-  isVerify    Boolean
+  phone       Int?
+  isVerify    Boolean @default(false)
   Transaction Transaction[]
   Riview      Riview[]
 }
@@ -40,7 +40,6 @@ model EO {
   username String  @unique
   email    String  @unique
   password String
-  referal  String  @unique
   point    Int
   avatar   String?
   phone    Int
