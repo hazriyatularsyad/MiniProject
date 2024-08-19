@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE `User` MODIFY `point` INTEGER NOT NULL DEFAULT 0,
+    MODIFY `phone` INTEGER NULL,
+    MODIFY `isVerify` BOOLEAN NOT NULL DEFAULT false;
