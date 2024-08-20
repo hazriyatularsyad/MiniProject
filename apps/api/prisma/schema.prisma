@@ -10,12 +10,95 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Sample {
-  id        Int      @id @default(autoincrement())
-  name      String
-  code      String   @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+enum Status {
+  pending
+  in_progress
+  done
+}
 
-  @@map("samples") // if you want to use snake_case format
+enum Ticket {
+  paid
+  free
+}
+
+model User {
+  id          Int           @unique @default(autoincrement())
+  username    String        @unique
+  email       String        @unique
+  password    String
+  referal     String?       @unique
+  point       Int @default(0)
+  avatar      String?
+  phone       Int?
+  isVerify    Boolean @default(false)
+  Transaction Transaction[]
+  Riview      Riview[]
+}
+
+model EO {
+  id       Int     @unique @default(autoincrement())
+  username String  @unique
+  email    String  @unique
+  password String
+  point    Int
+  avatar   String?
+  phone    Int
+  isVerify Boolean
+
+  Events Events[]
+}
+
+model Transaction {
+  id            Int      @unique @default(autoincrement())
+  eventId       Int
+  userId        Int
+  quantity      Int
+  createdAt     DateTime @default(now())
+  totalPrice    Int
+  totalDiscount Int
+  finalPrice    Int
+  status        Status
+  proof         String
+  user          User     @relation(fields: [userId], references: [id])
+  event         Events   @relation(fields: [eventId], references: [id])
+}
+
+model Riview {
+  id      Int    @unique @default(autoincrement())
+  review  String
+  ratings Int
+  userId  Int
+  eventId Int
+  user    User   @relation(fields: [userId], references: [id])
+  event   Events @relation(fields: [eventId], references: [id])
+}
+
+model Events {
+  id           Int           @unique @default(autoincrement())
+  name         String
+  price        Int
+  date         DateTime
+  location     String
+  description  String        @db.Text
+  seats        Int
+  ticket_types Ticket
+  EoId         Int
+  image        String
+  category     String
+  Transaction  Transaction[]
+  Riview       Riview[]
+  Promotion    Promotion[]
+  eo           EO            @relation(fields: [EoId], references: [id])
+  
+}
+
+model Promotion {
+  id          Int      @unique @default(autoincrement())
+  startDate   DateTime
+  endDate     DateTime
+  voucherCode String
+  qouta       Int
+  percentage  Int
+  eventId     Int
+  event       Events   @relation(fields: [eventId], references: [id])
 }

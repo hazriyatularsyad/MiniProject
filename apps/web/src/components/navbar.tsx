@@ -29,7 +29,10 @@ export default function Navbar() {
           <Link href='/detailTicket'>
           <p className="hover:scale-125 cursor-pointer">Explore</p>
           </Link>
-          <p className="hover:scale-125">My Tickets</p>
+          <Link href='/createEvent'>
+          
+          <p className="hover:scale-125">Create Event</p>
+          </Link>
 
           <Link href="/signin">
             <button className="mr-10 hover:before:bg-yellow-500 relative overflow-hidden border-black bg-black px-3 py-3 text-white shadow-2xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-yellow-500 before:transition-all before:duration-500 hover:text-black hover:shadow-white hover:before:left-0 hover:before:w-full">
