@@ -15,6 +15,6 @@ module.exports = {
   },
   plugins: [
     require('daisyui'),
-    require('flowbite/plugin'), // Correct way to include Flowbite plugin
+    require('flowbite/plugin'), 
   ],
 };

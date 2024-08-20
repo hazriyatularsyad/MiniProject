@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoClose } from 'react-icons/io5';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 export default function Navbar() {
@@ -17,8 +18,11 @@ export default function Navbar() {
   return (
     <div className="bg-white sm:w-full overflow-hidden border flex justify-between h-15 items-center ">
       <p className="text-black text-4xl font-extrabold ml-10">
-        Ticket<span className=" text-yellow-500">Zone.</span>
+        TiC<span className=" text-yellow-500">oncert.</span>
       </p>
+      {/* <div className='pl-6'>
+        <Image src="/logo.png" width={120} height={120} alt='logo' />
+      </div> */}
 
       <div className="text-black lg:flex gap-28 hidden ">
         <div className="flex items-center  font-light gap-8 ">
