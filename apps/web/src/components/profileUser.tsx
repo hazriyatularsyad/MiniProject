@@ -1,4 +1,4 @@
-import { Button, Popover } from 'flowbite-react';
+import { Button,Popover } from 'flowbite-react';
 import { RxAvatar } from 'react-icons/rx';
 
 export default function ProfileUser() {

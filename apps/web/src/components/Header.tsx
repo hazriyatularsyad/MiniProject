@@ -29,52 +29,52 @@ export default function Header() {
             <div className="flex flex-col gap-4">
               <div className="flex p-4 sm:h-[10vh] lg:h-[15vh] sm:w-full">
                 <Image
-                  src="/b1.jpg"
-                  alt="band"
+                  src="/Hammersonic.jpg"
+                  alt="Hammerson"
                   width={120}
                   height={80}
                   priority
                 />
                 <div className="ml-5">
-                  <p className="hover:underline hover:cursor-pointer">
-                    qwedaada
+                  <p className="hover:underline hover:cursor-pointer font-bold">
+                    HAMMERSONIC
                   </p>
                   <p className="hover:underline hover:cursor-pointer">
-                    qwedaada msnfmsfsfs snfjsnfjsn
+                    International Metal Festival
                   </p>
                 </div>
               </div>
               <div className="flex p-4 sm:h-[10vh] lg:h-[15vh] sm:w-full">
                 <Image
-                  src="/b2.jpg"
-                  alt="band"
+                  src="/wtflogo.png"
+                  alt="we the fest"
                   width={120}
                   height={80}
                   priority
                 />
                 <div className="ml-5">
-                  <p className="hover:underline hover:cursor-pointer">
-                    qwedaada
+                  <p className="hover:underline hover:cursor-pointer font-bold">
+                    WE THE FEST
                   </p>
                   <p className="hover:underline hover:cursor-pointer">
-                    qwedaada msnfmsfsfs snfjsnfjsn
+                    Festival musik, seni, mode dan makanan
                   </p>
                 </div>
               </div>
               <div className="flex p-4 sm:h-[10vh] lg:h-[15vh] sm:w-full">
                 <Image
-                  src="/b3.jpg"
-                  alt="band"
+                  src="/jrcklnd.jpg"
+                  alt="Java Rockin Land"
                   width={120}
                   height={80}
                   priority
                 />
                 <div className="ml-5">
-                  <p className="hover:underline hover:cursor-pointer">
-                    qwedaada
+                  <p className="hover:underline hover:cursor-pointer font-bold">
+                    JAVA ROCKINLAND
                   </p>
                   <p className="hover:underline hover:cursor-pointer">
-                    qwedaada msnfmsfsfs snfjsnfjsn
+                    Festival rock tahunan
                   </p>
                 </div>
               </div>
@@ -83,52 +83,52 @@ export default function Header() {
             <div className="flex flex-col gap-4">
               <div className="flex p-4 sm:h-[10vh] lg:h-[15vh] sm:w-full">
                 <Image
-                  src="/b1.jpg"
-                  alt="band"
+                  src="/tsp.jpg"
+                  alt="The Sound Project"
                   width={120}
                   height={80}
                   priority
                 />
                 <div className="ml-5">
-                  <p className="hover:underline hover:cursor-pointer">
-                    qwedaada
+                  <p className="hover:underline hover:cursor-pointer font-bold">
+                    The Sound Project
                   </p>
                   <p className="hover:underline hover:cursor-pointer">
-                    qwedaada msnfmsfsfs snfjsnfjsn
+                    Platform musik berbasis kampus-komunitas
                   </p>
                 </div>
               </div>
               <div className="flex p-4 sm:h-[10vh] lg:h-[15vh] sm:w-full">
                 <Image
-                  src="/b2.jpg"
-                  alt="band"
+                  src="/lalalogo.jpg"
+                  alt="Lalala Fest"
                   width={120}
                   height={80}
                   priority
                 />
                 <div className="ml-5">
-                  <p className="hover:underline hover:cursor-pointer">
-                    qwedaada
+                  <p className="hover:underline hover:cursor-pointer font-bold">
+                    Lalala Fest
                   </p>
                   <p className="hover:underline hover:cursor-pointer">
-                    qwedaada msnfmsfsfs snfjsnfjsn
+                    Annual Celebration of Music and Arts Festival
                   </p>
                 </div>
               </div>
               <div className="flex p-4 sm:h-[10vh] lg:h-[15vh] sm:w-full">
                 <Image
-                  src="/b3.jpg"
-                  alt="band"
+                  src="/jjflogo.jpg"
+                  alt="Java Jazz Festival"
                   width={120}
                   height={80}
                   priority
                 />
                 <div className="ml-5">
-                  <p className="hover:underline hover:cursor-pointer">
-                    qwedaada
+                  <p className="hover:underline hover:cursor-pointer font-bold">
+                    Java Jazz Festival
                   </p>
                   <p className="hover:underline hover:cursor-pointer">
-                    qwedaada msnfmsfsfs snfjsnfjsn
+                    The largest jazz music festival held every year
                   </p>
                 </div>
               </div>
@@ -151,37 +151,35 @@ export default function Header() {
               aria-label="Search"
             />
           </div>
-          <div className="overflow-hidden lg:h-[50vh] relative group w-full sm:h-[33vh] sm:mt-10">
+          <div className="overflow-hidden lg:h-[50vh] relative group  lg:w-full sm:h-[33vh] sm:mt-10">
             <Image
-              className=" transition duration-300 ease-in-out group-hover:scale-110 cursor-pointer"
-              src="/b1.jpg"
-              alt="band"
+              className=" transition duration-300 ease-in-out group-hover:scale-110 object-cover cursor-pointer"
+              src="/jjf3.jpg"
+              alt="javajazz"
               layout="fill"
               objectFit="cover"
               priority
             />
             <div className="absolute inset-0 overlay flex items-end ml-3 sm:mb-5 mb-8">
               <div className="flex flex-col  sm:mt-2">
-                <p className="text-3xl font-bold">
-                  Lorem ipsum dolor sit amet.
-                </p>
+                <p className="text-3xl font-bold">JAVA JAZZ FESTIVAL</p>
                 <p>Visit</p>
               </div>
             </div>
           </div>
           <div className="flex gap-8 mt-8 flex-col lg:flex-row md:flex-row ">
-            <div className="bg-white lg:w-1/2 w-full md:w-1/2 overflow-hidden ">
+            <div className="bg-white lg:w-1/2 sm:w-full md:w-1/2 overflow-hidden ">
               <Image
-                className="transition duration-300  ease-in-out hover:scale-110 cursor-pointer"
-                src="/b2.jpg"
-                alt="band"
+                className="transition duration-300 w-full  ease-in-out hover:scale-110 cursor-pointer"
+                src="/Hmrsn2.jpg"
+                alt="Hammersonic"
                 width={400}
                 height={200}
                 priority
               />
               <div className="px-6 py-4">
                 <div className="font-bold text-black text-xl mb-2">
-                  One Republic
+                  HAMMERSONIC
                 </div>
                 <p className="text-gray-700 text-base">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -192,16 +190,16 @@ export default function Header() {
             </div>
             <div className="bg-white lg:w-1/2 sm:w-full md:w-1/2 overflow-hidden ">
               <Image
-                className="transition duration-300 ease-in-out hover:scale-110 cursor-pointer"
-                src="/b1.jpg"
-                alt="band"
+                className="transition duration-300 w-full ease-in-out hover:scale-110 cursor-pointer"
+                src="/wtf2.jpg"
+                alt="wtf"
                 width={400}
                 height={200}
                 priority
               />
               <div className="px-6 py-4 flex flex-col">
                 <div className="font-bold text-black text-xl mb-2">
-                  One Ok Rock
+                  WE THE FEST
                 </div>
                 <p className="text-gray-700 text-base">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
