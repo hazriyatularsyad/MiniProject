@@ -1,5 +1,6 @@
 
 
+import Cardtes from "@/components/cardtes";
 import CarouselComponent from "@/components/carousel";
 import Footer from "@/components/Footer";
 
@@ -13,6 +14,7 @@ export default function Home() {
       <Header/>
       <CarouselComponent />
       <Footer/>
+      <Cardtes/>
     </>
   )
 }
