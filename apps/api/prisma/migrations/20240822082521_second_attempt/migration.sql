@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `EO` MODIFY `isVerify` BOOLEAN NOT NULL DEFAULT false;

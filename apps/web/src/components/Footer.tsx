@@ -5,8 +5,8 @@ export default function Footer() {
   return (
     <footer className=" flex flex-col footer-center bg-white text-primary-content items-center justify-center ">
       <aside>
-        <p  className='flex justify-center content-center items-center py-3'>
-        <Image src='/logo.png' width={100} height={100} alt='logo'/>
+        <p  className='flex justify-center content-center items-center py-4'>
+        <Image src='/logo.png' className='pt-5' width={100} height={100} alt='logo'/>
         </p>
         {/* <svg
           width="50"
