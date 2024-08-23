@@ -12,6 +12,7 @@ import { PORT } from './config';
 // import { SampleRouter } from './routers/sample.router';
 import { AuthRouter } from './routers/auth.router';
 import { UserRouter } from './routers/user.router';
+import { EventRouter } from './routers/event.router';
 import { EoRouter } from './routers/eo.router';
 
 export default class App {
@@ -56,6 +57,10 @@ export default class App {
   private routes(): void {
     // const sampleRouter = new SampleRouter();
     const authRouter = new AuthRouter();
+
+    const userRouter = new UserRouter();
+    const eventRouter = new EventRouter();
+
     const userRouter = new UserRouter()
     const eoRouter = new EoRouter()
 
@@ -66,7 +71,10 @@ export default class App {
     // this.app.use('/api/samples', sampleRouter.getRouter());
     this.app.use('/api/auth', authRouter.getRouter());
     this.app.use('/api/users', userRouter.getRouter());
+
+    this.app.use('/api/event',eventRouter.getRouter());
     this.app.use('/api/eo', eoRouter.getRouter() )
+
   }
 
   public start(): void {
