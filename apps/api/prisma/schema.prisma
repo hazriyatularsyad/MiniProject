@@ -40,10 +40,9 @@ model EO {
   username String  @unique
   email    String  @unique
   password String
-  point    Int
   avatar   String?
-  phone    Int
-  isVerify Boolean
+  phone    Int?
+  isVerify Boolean @default(false)
 
   Events Events[]
 }

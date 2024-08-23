@@ -1,4 +1,6 @@
+import { createToken } from '@/helpers/createToken';
 import { hashPass } from '@/helpers/hashpassword';
+import generateReferralCode from '@/helpers/refferalCode';
 import prisma from '@/prisma';
 import { compare } from 'bcrypt';
 import { Request, Response } from 'express';
@@ -17,10 +19,16 @@ export class AuthController {
 
       const password = await hashPass(req.body.password);
 
+      const referal = generateReferralCode();
+
+      console.log(referal);
+      
+
       const user = await prisma.user.create({
         data: {
           ...req.body,
           password,
+         referal,
         },
       });
       return res.status(201).send({
@@ -35,33 +43,34 @@ export class AuthController {
     }
   }
 
-    async loginUserData(req: Request, res: Response) {
-        try {
-            const user = await prisma.user.findFirst({
-                where: {
-                    OR: [
-                        { username: req.body.username },
-                        { email: req.body.username },
-                    ]
-                }
-            })
+  async loginUserData(req: Request, res: Response) {
+    try {
+      
+      const user = await prisma.user.findFirst({
+        where: {
+          OR: [{ username: req.body.username }, { email: req.body.username }],
+        },
+      });
 
-            if (!user) throw 'user not found'
-            if (!user.isVerify) throw 'user not verified'
-            
-            const isValidPass = await compare(req.body.password, user.password)
-            if (!isValidPass) throw 'password is not valid'
+      if (!user) throw 'user not found';
+      if (!user.isVerify) throw 'user not verified';
 
-            res.status(200).send({
-                message: 'login success',
-                user
-            })
-        } catch (error) {
-            res.status(400).send({
-                status: 'login failed',
-                message: error
-            })
-        }
+      const isValidPass = await compare(req.body.password, user.password);
+
+      if (!isValidPass) throw 'password is not valid';
+
+      const token = createToken({ id: user!.id, role: 'user' }, "1d");
+
+      res.status(200).send({
+        message: 'login success',
+        token,
+        user,
+      });
+    } catch (error) {
+      res.status(400).send({
+        status: 'login failed',
+        message: error,
+      });
     }
-    
+  }
 }

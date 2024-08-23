@@ -8,6 +8,7 @@ import Input from '@/components/Input';
 import { FcGoogle } from 'react-icons/fc';
 import { loginUser } from '@/components/libs/action/user';
 import { useRouter } from 'next/navigation';
+import PasswordInput from '../register/_components/showPass';
 
 export interface ILogin {
   username: string;
@@ -25,7 +26,6 @@ export default function Singnin() {
 
   const validateSchema = yup.object().shape({
     username: yup.string().required('Username is required'),
-    // email: yup.string().email('Invalid email').required('Email is required'),
     password: yup.string().required('Password is required'),
   });
 
@@ -50,7 +50,7 @@ export default function Singnin() {
     >
       {() => {
         return (
-          <div className="bg-white h-screen flex justify-center items-center">
+          <div className="bg-white h-screen flex justify-center items-center relative">
             <Image
               src="/bglogin.jpeg"
               layout="fill"
@@ -59,17 +59,22 @@ export default function Singnin() {
               alt="login-image"
             />
             <Form className="z-30 justify-center items-center flex">
-              <div className="flex shadow-xl w-[60vh] bg-white/80 rounded-xl gap-4 flex-col p-5 border ">
+              <div className="flex shadow-xl w-[30vh] md:w-[50vh] lg:w-[60vh] bg-white/80 rounded-xl gap-4 flex-col p-5 border ">
                 <p className="text-3xl font-extrabold text-gray-700">Sign In</p>
 
                 <label className="text-gray-800 text-xs block">Email</label>
-                <Input name="username" type="text" placeholder="masukkan email atau username" />
-                <label className="text-gray-800 text-xs block">Password</label>
                 <Input
+                  name="username"
+                  type="text"
+                  placeholder="masukkan email atau username"
+                />
+                <label className="text-gray-800 text-xs block">Password</label>
+                <PasswordInput/>
+                {/* <Input
                   name="password"
                   type="password"
                   placeholder="masukkan password"
-                />
+                /> */}
                 <button
                   type="submit"
                   className="w-full py-3 px-4 tracking-wider text-sm rounded-md text-white bg-gray-700 hover:bg-gray-800 focus:outline-none"

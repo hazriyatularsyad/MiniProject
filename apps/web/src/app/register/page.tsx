@@ -6,6 +6,9 @@ import * as yup from 'yup';
 import Image from 'next/image';
 import Link from 'next/link';
 import { registerUser } from '@/components/libs/action/user';
+import PasswordInput from './_components/showPass';
+
+
 
 export interface IRegis {
   username: string;
@@ -14,6 +17,7 @@ export interface IRegis {
 }
 
 export default function Register() {
+
   const initialValue: IRegis = {
     username: '',
     email: '',
@@ -48,7 +52,7 @@ export default function Register() {
       >
         {() => {
           return (
-            <div className="bg-white h-screen flex justify-center items-center">
+            <div className="bg-white h-screen flex justify-center items-center relative">
               <Image
                 src="/bglogin.jpeg"
                 layout="fill"
@@ -56,8 +60,8 @@ export default function Register() {
                 className="w-full h-full object-cover block mx-auto"
                 alt="login-image"
               />
-              <Form className="z-30 justify-center items-center flex">
-                <div className="flex shadow-xl w-[60vh] bg-white/80 rounded-xl gap-4 flex-col p-5 border ">
+              <Form className="z-30  justify-center items-center flex">
+                <div className="flex shadow-xl w-[30vh] md:w-[50vh] lg:w-[60vh] bg-white/80 rounded-xl gap-2 flex-col p-5 border ">
                   <p className="text-3xl font-extrabold text-black">Register</p>
                   <label className="text-gray-800 text-xs block ">
                     Username
@@ -74,19 +78,31 @@ export default function Register() {
                     placeholder="masukkan email"
                   />
                   <label className="text-gray-800 text-xs block">
-                    Password
+                    Phone Number
                   </label>
                   <Input
-                    name="password"
-                    type="password"
-                    placeholder="masukkan password"
+                    name="phone"
+                    type="tel"
+                    placeholder="masukkan nomor hp"
                   />
-              <button
-                type="submit"
-                className="w-full py-3 px-4 tracking-wider text-sm rounded-md text-white bg-gray-700 hover:bg-gray-800 focus:outline-none"
-              >
-                Create your account
-              </button>
+                  <label className="text-gray-800 text-xs block">
+                    Password
+                  </label>
+                  <PasswordInput/>
+                 
+                  <button
+                    type="submit"
+                    className="w-full py-3 px-4 tracking-wider text-sm rounded-md text-white bg-gray-700 hover:bg-gray-800 focus:outline-none"
+                  >
+                    Create account
+                  </button>
+                  <div className="my-4 flex items-center justify-center gap-4">
+                    <Link href="/signin">
+                      <p className="text-l text-black text-center hover:text-blue-700 cursor-pointer">
+                        login here
+                      </p>
+                    </Link>
+                  </div>
                 </div>
               </Form>
             </div>
