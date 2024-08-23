@@ -20,10 +20,6 @@ export default function Navbar() {
       <p className="text-black text-4xl font-extrabold ml-10">
         TiC<span className=" text-yellow-500">oncert.</span>
       </p>
-      {/* <div className='pl-6'>
-        <Image src="/logo.png" width={120} height={120} alt='logo' />
-      </div> */}
-
       <div className="text-black lg:flex gap-28 hidden ">
         <div className="flex items-center  font-light gap-8 ">
           <Link href='/detailTicket'>
@@ -32,6 +28,10 @@ export default function Navbar() {
           <Link href='/createEvent'>
           
           <p className="hover:scale-125">Create Event</p>
+          </Link>
+          <Link href='/regisEo'>
+          
+          <p className="hover:scale-125">Regis Eo</p>
           </Link>
 
           <Link href="/signin">

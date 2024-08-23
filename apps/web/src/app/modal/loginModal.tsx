@@ -29,7 +29,6 @@ export function LoginModal() {
                 id="email"
                 placeholder="name@company.com"
                 value={email}
-                onChange={(event) => setEmail(event.target.value)}
                 required
               />
             </div>

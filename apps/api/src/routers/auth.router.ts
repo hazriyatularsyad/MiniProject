@@ -16,6 +16,7 @@ export class AuthRouter{
 
     private initializeRoutes():void { 
         this.router.post('/register', this.authController.createUserData);
+        
         this.router.post('/login', this.authController.loginUserData);
     }
     getRouter(): Router{

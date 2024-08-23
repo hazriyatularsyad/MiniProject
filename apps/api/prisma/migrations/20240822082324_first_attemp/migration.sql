@@ -1,23 +1,14 @@
-/*
-  Warnings:
-
-  - You are about to drop the `samples` table. If the table is not empty, all the data it contains will be lost.
-
-*/
--- DropTable
-DROP TABLE `samples`;
-
 -- CreateTable
 CREATE TABLE `User` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `username` VARCHAR(191) NOT NULL,
     `email` VARCHAR(191) NOT NULL,
     `password` VARCHAR(191) NOT NULL,
-    `referal` VARCHAR(191) NOT NULL,
-    `point` INTEGER NOT NULL,
+    `referal` VARCHAR(191) NULL,
+    `point` INTEGER NOT NULL DEFAULT 0,
     `avatar` VARCHAR(191) NULL,
-    `phone` INTEGER NOT NULL,
-    `isVerify` BOOLEAN NOT NULL,
+    `phone` INTEGER NULL,
+    `isVerify` BOOLEAN NOT NULL DEFAULT false,
 
     UNIQUE INDEX `User_id_key`(`id`),
     UNIQUE INDEX `User_username_key`(`username`),
@@ -31,16 +22,13 @@ CREATE TABLE `EO` (
     `username` VARCHAR(191) NOT NULL,
     `email` VARCHAR(191) NOT NULL,
     `password` VARCHAR(191) NOT NULL,
-    `referal` VARCHAR(191) NOT NULL,
-    `point` INTEGER NOT NULL,
     `avatar` VARCHAR(191) NULL,
-    `phone` INTEGER NOT NULL,
+    `phone` INTEGER NULL,
     `isVerify` BOOLEAN NOT NULL,
 
     UNIQUE INDEX `EO_id_key`(`id`),
     UNIQUE INDEX `EO_username_key`(`username`),
-    UNIQUE INDEX `EO_email_key`(`email`),
-    UNIQUE INDEX `EO_referal_key`(`referal`)
+    UNIQUE INDEX `EO_email_key`(`email`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
