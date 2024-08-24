@@ -58,10 +58,10 @@ export default class App {
     // const sampleRouter = new SampleRouter();
     const authRouter = new AuthRouter();
 
-    const userRouter = new UserRouter();
+    // const userRouter = new UserRouter();
     const eventRouter = new EventRouter();
 
-    const userRouter = new UserRouter()
+    // const userRouter = new UserRouter()
     const eoRouter = new EoRouter()
 
     this.app.get('/api', (req: Request, res: Response) => {
@@ -70,7 +70,7 @@ export default class App {
 
     // this.app.use('/api/samples', sampleRouter.getRouter());
     this.app.use('/api/auth', authRouter.getRouter());
-    this.app.use('/api/users', userRouter.getRouter());
+    // this.app.use('/api/users', userRouter.getRouter());
 
     this.app.use('/api/event',eventRouter.getRouter());
     this.app.use('/api/eo', eoRouter.getRouter() )

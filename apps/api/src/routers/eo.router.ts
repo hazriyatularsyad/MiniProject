@@ -1,4 +1,4 @@
-import { AuthController } from '@/controllers/auth.controller';
+
 import { EoController,  } from '@/controllers/eo.controller';
 import { Router } from 'express';
 
@@ -15,7 +15,7 @@ export class EoRouter {
   private initializeRoutes(): void {
     this.router.post('/register', this.eoController.createEoData);
     this.router.post('/login', this.eoController.loginEo)
-    // this.router.post('/login', this.authController.loginUserData);
+    
   }
   getRouter(): Router {
     return this.router;

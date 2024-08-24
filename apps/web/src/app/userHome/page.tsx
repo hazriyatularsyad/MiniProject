@@ -5,11 +5,12 @@ import { Footer } from 'flowbite-react';
 import Image from 'next/image';
 import UserFooter from './_components/userFooter';
 import UserBottomNav from './_components/UserBottomNav';
+import NavbarLogin from './_components/navbarlogin';
 
 export default function userHome() {
   return (
     <div className="bg-black text-white">
-    <Navbar />
+    <NavbarLogin/>
     <div className="flex flex-col py-11 items-center justify-center text-center">
       <h1 className="text-5xl font-bold font-positiveForward">
         ON SHOWING EVENT

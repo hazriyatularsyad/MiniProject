@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Navbar from '@/components/navbar';
 import localfont from 'next/font/local';
+import NavbarLogin from './userHome/_components/navbarlogin';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,7 +28,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={` ${positiveForward.variable}`}>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}</body>
     </html>
   );
 }

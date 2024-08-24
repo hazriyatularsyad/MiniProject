@@ -8,36 +8,36 @@ import Link from 'next/link';
 import { registerUser } from '@/components/libs/action/user';
 import PasswordInput from './_components/showPass';
 
-
-
 export interface IRegis {
   username: string;
   email: string;
+  phone: string;
   password: string;
 }
 
 export default function Register() {
-
   const initialValue: IRegis = {
     username: '',
     email: '',
+    phone: '',
     password: '',
   };
 
   const validateSchema = yup.object().shape({
     username: yup.string().required('Username is required'),
     email: yup.string().email('Invalid email').required('Email is required'),
+    phone: yup.string().required('phone required'),
+
     password: yup.string().required('Password is required'),
   });
 
   const onRegisterUser = async (data: IRegis) => {
-  try {
-    const res = await registerUser(data)
-  } catch (error) {
-    console.log(error);
-    
-  }
-}
+    try {
+      const res = await registerUser(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div>
@@ -55,8 +55,8 @@ export default function Register() {
             <div className="bg-white h-screen flex justify-center items-center relative">
               <Image
                 src="/bglogin.jpeg"
-                layout="fill"
-                objectFit="cover"
+                layout='fill'
+                objectFit='cover'
                 className="w-full h-full object-cover block mx-auto"
                 alt="login-image"
               />
@@ -82,14 +82,14 @@ export default function Register() {
                   </label>
                   <Input
                     name="phone"
-                    type="tel"
+                    type="text"
                     placeholder="masukkan nomor hp"
                   />
                   <label className="text-gray-800 text-xs block">
                     Password
                   </label>
-                  <PasswordInput/>
-                 
+                  <PasswordInput name='password'/>
+
                   <button
                     type="submit"
                     className="w-full py-3 px-4 tracking-wider text-sm rounded-md text-white bg-gray-700 hover:bg-gray-800 focus:outline-none"
