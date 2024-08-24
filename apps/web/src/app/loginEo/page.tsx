@@ -6,11 +6,13 @@ import { Field, Form, Formik } from 'formik';
 import Link from 'next/link';
 import Input from '@/components/Input';
 import { FcGoogle } from 'react-icons/fc';
-import { loginUser } from '@/components/libs/action/user';
+import { loginUser } from '@/libs/action/user';
 import { useRouter } from 'next/navigation';
 import PasswordInput from '../register/_components/showPass';
+import { loginEo } from '@/libs/action/eo';
+import { createCookie, navigate } from '@/libs/action/server';
 
-export interface ILogin {
+export interface ILoginEo {
   username: string;
   password: string;
 }
@@ -18,7 +20,7 @@ export interface ILogin {
 export default function LoginEo() {
   const router = useRouter();
 
-  const initialValue: ILogin = {
+  const initialValue: ILoginEo = {
     username: '',
     password: '',
   };
@@ -28,10 +30,11 @@ export default function LoginEo() {
     password: yup.string().required('Password is required'),
   });
 
-  const onLoginUser = async (data: ILogin) => {
+  const onLoginEo = async (data: ILoginEo) => {
     try {
-      const res = await loginUser(data);
-      router.push('/');
+      const res = await loginEo(data);
+      createCookie('token', res.token);
+      navigate('/createEvent');
     } catch (error) {
       console.log(error);
     }
@@ -41,7 +44,7 @@ export default function LoginEo() {
       initialValues={initialValue}
       validationSchema={validateSchema}
       onSubmit={(values, action) => {
-        onLoginUser(values);
+        onLoginEo(values);
         alert(JSON.stringify(values));
         action.resetForm();
         console.log(values);
@@ -68,8 +71,8 @@ export default function LoginEo() {
                   placeholder="masukkan email atau username"
                 />
                 <label className="text-gray-800 text-xs block">Password</label>
-                <PasswordInput name='password'/>
-               
+                <PasswordInput name="password" />
+
                 <button
                   type="submit"
                   className="w-full py-3 px-4 tracking-wider text-sm rounded-md text-white bg-gray-700 hover:bg-gray-800 focus:outline-none"

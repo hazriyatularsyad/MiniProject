@@ -6,7 +6,7 @@ import * as yup from 'yup';
 import PasswordInput from '../register/_components/showPass';
 import Input from '@/components/Input';
 import Image from 'next/image';
-import { registerEo } from '@/components/libs/action/eo';
+import { registerEo } from '@/libs/action/eo';
 
 export interface IEo {
   username: string;
@@ -18,7 +18,7 @@ export interface IEo {
 export default function RegisEo(data: IEo) {
   const initialValue: IEo = {
     username: '',
-      email: '',
+    email: '',
     phone: '',
     password: '',
   };
@@ -80,7 +80,7 @@ export default function RegisEo(data: IEo) {
                   placeholder="masukkan nomor hp"
                 />
                 <label className="text-gray-800 text-xs block">Password</label>
-                <PasswordInput />
+                <PasswordInput name='password'/>
 
                 <button
                   type="submit"

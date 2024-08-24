@@ -69,9 +69,9 @@ export default class App {
     });
 
     // this.app.use('/api/samples', sampleRouter.getRouter());
-    this.app.use('/api/auth', authRouter.getRouter());
     // this.app.use('/api/users', userRouter.getRouter());
-
+    
+    this.app.use('/api/auth', authRouter.getRouter());
     this.app.use('/api/event',eventRouter.getRouter());
     this.app.use('/api/eo', eoRouter.getRouter() )
 
