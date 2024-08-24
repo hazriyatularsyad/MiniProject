@@ -6,9 +6,9 @@ import { MdOutlineDateRange } from 'react-icons/md';
 import { MdOutlineTimer } from 'react-icons/md';
 import { SiGooglemaps } from 'react-icons/si';
 import { useState } from 'react';
-import TicketCard from '../_components/tiket';
-import TicketInfo from '../_components/tiket';
-import BottomNav from '../../BottomNav/page';
+import TicketCard from './_components/tiket';
+import TicketInfo from './_components/tiket';
+import BottomNav from '../BottomNav/page';
 
 export default function DetailTicket() {
   const [activeTab, setActiveTab] = useState(1);

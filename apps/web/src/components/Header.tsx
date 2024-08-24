@@ -7,7 +7,7 @@ import Image from 'next/image';
 export default function Header() {
   return (
     <div className="bg-black text-white">
-      <Navbar />
+      <Navbar/>
       <div className="flex flex-col py-11 items-center justify-center text-center">
         <h1 className="text-5xl font-bold font-positiveForward">
           ON SHOWING EVENT
@@ -170,8 +170,8 @@ export default function Header() {
           <div className="flex gap-8 mt-8 flex-col lg:flex-row md:flex-row ">
             <div className="bg-white lg:w-1/2 sm:w-full md:w-1/2 overflow-hidden ">
               <Image
-                className="transition duration-300 w-full  ease-in-out hover:scale-110 cursor-pointer"
-                src="/Hmrsn2.jpg"
+                className="transition duration-300 w-full object-cover h-[25vh] ease-in-out hover:scale-110 cursor-pointer"
+                src="/Hmrsn.jpg"
                 alt="Hammersonic"
                 width={400}
                 height={200}
@@ -190,7 +190,7 @@ export default function Header() {
             </div>
             <div className="bg-white lg:w-1/2 sm:w-full md:w-1/2 overflow-hidden ">
               <Image
-                className="transition duration-300 w-full ease-in-out hover:scale-110 cursor-pointer"
+                className="transition duration-300 w-full object-cover h-[25vh] ease-in-out hover:scale-110 cursor-pointer"
                 src="/wtf2.jpg"
                 alt="wtf"
                 width={400}

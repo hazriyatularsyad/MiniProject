@@ -1,6 +1,6 @@
 import { IEo } from "@/app/regisEo/page";
 
-export const registerUser = async (data: IEo) => {
+export const registerEo = async (data: IEo) => {
   const res = await fetch('http://localhost:8000/api/eo/register', {
     method: 'POST',
     headers: {

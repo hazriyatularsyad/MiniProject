@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE `EO` MODIFY `phone` VARCHAR(191) NULL;
+
+-- AlterTable
+ALTER TABLE `User` MODIFY `phone` VARCHAR(191) NULL;

@@ -6,19 +6,17 @@ import { Field, Form, Formik } from 'formik';
 import Link from 'next/link';
 import Input from '@/components/Input';
 import { FcGoogle } from 'react-icons/fc';
+import { loginUser } from '@/components/libs/action/user';
 import { useRouter } from 'next/navigation';
 import PasswordInput from '../register/_components/showPass';
-import { createCookie, navigate } from '@/libs/action/server';
-import { loginUser } from '@/libs/action/user';
 
 export interface ILogin {
   username: string;
   password: string;
 }
 
-export default function Singnin() {
-
-  const router = useRouter()
+export default function LoginEo() {
+  const router = useRouter();
 
   const initialValue: ILogin = {
     username: '',
@@ -30,23 +28,20 @@ export default function Singnin() {
     password: yup.string().required('Password is required'),
   });
 
-   const onLoginUser = async (data: ILogin) => {
-     try {
-       const res = await loginUser(data);
-       createCookie('token', res.token)
-       navigate('/userHome');
-      //  router.push('/')
-     } catch (error) {
-       console.log(error);
-     }
-   };
+  const onLoginUser = async (data: ILogin) => {
+    try {
+      const res = await loginUser(data);
+      router.push('/');
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Formik
       initialValues={initialValue}
       validationSchema={validateSchema}
       onSubmit={(values, action) => {
         onLoginUser(values);
-        navigate('/userHome')
         alert(JSON.stringify(values));
         action.resetForm();
         console.log(values);
@@ -74,7 +69,7 @@ export default function Singnin() {
                 />
                 <label className="text-gray-800 text-xs block">Password</label>
                 <PasswordInput name='password'/>
-              
+               
                 <button
                   type="submit"
                   className="w-full py-3 px-4 tracking-wider text-sm rounded-md text-white bg-gray-700 hover:bg-gray-800 focus:outline-none"

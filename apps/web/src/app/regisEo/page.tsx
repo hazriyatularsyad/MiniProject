@@ -6,17 +6,20 @@ import * as yup from 'yup';
 import PasswordInput from '../register/_components/showPass';
 import Input from '@/components/Input';
 import Image from 'next/image';
+import { registerEo } from '@/components/libs/action/eo';
 
 export interface IEo {
   username: string;
-  email: string;
+    email: string;
+    phone: string;
   password: string;
 }
 
 export default function RegisEo(data: IEo) {
   const initialValue: IEo = {
     username: '',
-    email: '',
+      email: '',
+    phone: '',
     password: '',
   };
 
@@ -29,7 +32,7 @@ export default function RegisEo(data: IEo) {
 
   const onRegisterEo = async (data: IEo) => {
     try {
-      const res = await RegisEo(data);
+      const res = await registerEo(data);
     } catch (error) {
       console.log(error);
     }
@@ -73,7 +76,7 @@ export default function RegisEo(data: IEo) {
                 </label>
                 <Input
                   name="phone"
-                  type="tel"
+                  type="text"
                   placeholder="masukkan nomor hp"
                 />
                 <label className="text-gray-800 text-xs block">Password</label>

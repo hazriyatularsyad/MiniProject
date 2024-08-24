@@ -29,7 +29,7 @@ model User {
   referal     String?       @unique
   point       Int @default(0)
   avatar      String?
-  phone       Int?
+  phone       String?
   isVerify    Boolean @default(false)
   Transaction Transaction[]
   Riview      Riview[]
@@ -41,7 +41,7 @@ model EO {
   email    String  @unique
   password String
   avatar   String?
-  phone    Int?
+  phone    String?
   isVerify Boolean @default(false)
 
   Events Events[]
