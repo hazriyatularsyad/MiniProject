@@ -28,6 +28,7 @@ export default function Navbar() {
           <Link href="/createEvent">
             <p className="hover:scale-125">Create Event</p>
           </Link>
+          
 
           <QuestionRegis
             name="REGISTER"

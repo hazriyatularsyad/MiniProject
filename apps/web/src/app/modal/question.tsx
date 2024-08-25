@@ -61,7 +61,7 @@ export default function Question({
                   <ButtonLink
                     href="/signin"
                     name="User"
-                    className="bg-gray-100 ml-5 border text-black hover:text-white"
+                    className="bg-blue-800 ml-5 border  hover:bg-blue-500 text-white"
                   />
                 </div>
               </div>

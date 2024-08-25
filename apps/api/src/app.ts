@@ -11,7 +11,6 @@ import cors from 'cors';
 import { PORT } from './config';
 // import { SampleRouter } from './routers/sample.router';
 import { AuthRouter } from './routers/auth.router';
-import { UserRouter } from './routers/user.router';
 import { EventRouter } from './routers/event.router';
 import { EoRouter } from './routers/eo.router';
 
@@ -69,9 +68,9 @@ export default class App {
     });
 
     // this.app.use('/api/samples', sampleRouter.getRouter());
-    this.app.use('/api/auth', authRouter.getRouter());
     // this.app.use('/api/users', userRouter.getRouter());
-
+    
+    this.app.use('/api/auth', authRouter.getRouter());
     this.app.use('/api/event',eventRouter.getRouter());
     this.app.use('/api/eo', eoRouter.getRouter() )
 
