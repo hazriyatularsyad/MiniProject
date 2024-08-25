@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 
 import Header from "@/components/Header";
 import NavbarLogin from "./userHome/_components/navbarlogin";
+import ListEvent from "@/components/listEvent";
 
 
 export default function Home() {
@@ -14,8 +15,8 @@ export default function Home() {
       {/* <Dashboard /> */}
       <Header/>
       <CarouselComponent />
+      <ListEvent/>
       <Footer/>
-      <Cardtes/>
     </>
   )
 }

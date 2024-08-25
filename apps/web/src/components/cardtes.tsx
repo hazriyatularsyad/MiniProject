@@ -1,10 +1,27 @@
+import { getEvent } from '@/libs/action/event';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Cardtes() {
+export interface IEvent {
+  id?: string;
+  name: string;
+  price: string;
+  date: string;
+  location: string;
+  description: string;
+  seats: string;
+  ticked_types: string;
+  EoId?: string;
+  image?: string;
+  category: string;
+}
+export default async function Cardtes({ name }: { name: IEvent }) {
+  // const { resp } = await getEvent()
+  // console.log(name);
+
   return (
     <div className=" mt-4">
-      <div className="bg-white w-[40vh] rounded-xl  h-full overflow-hidden pb-3">
+      <div className="bg-white flex flex-col w-[30vh] h-full rounded-xl overflow-hidden ">
         <Image
           src="/jjf3.jpg"
           className="w-full hover:scale-110 duration-300"
@@ -12,10 +29,10 @@ export default function Cardtes() {
           height={400}
           alt="tes"
         />
-        <div className="flex flex-col text-black py-2 ml-4">
-          <p>MackleMore</p>
-          <p>28-08-2024</p>
-          <p>Bandung</p>
+        <div className="flex flex-col text-black py-4 ml-4">
+          <p className='font-bold text-xl'>{name.name}</p>
+          <p>{name.date}</p>
+          <p>{name.location}</p>
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@ import * as yup from 'yup';
 import { DateSchema } from 'yup';
 import { Formik } from 'formik';
 import Input from '@/components/Input';
+import NavbarLogin from '../userHome/_components/navbarlogin';
 
 
 interface ICreate{
@@ -33,7 +34,7 @@ export default function CreateEvent() {
 
     return (
       <div className="">
-        <Navbar />
+        <NavbarLogin/>
         <Formik
           initialValues={initialValue}
           validationSchema={validateSchema}

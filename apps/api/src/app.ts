@@ -11,7 +11,6 @@ import cors from 'cors';
 import { PORT } from './config';
 // import { SampleRouter } from './routers/sample.router';
 import { AuthRouter } from './routers/auth.router';
-import { UserRouter } from './routers/user.router';
 import { EventRouter } from './routers/event.router';
 import { EoRouter } from './routers/eo.router';
 

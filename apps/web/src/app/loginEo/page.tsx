@@ -34,7 +34,7 @@ export default function LoginEo() {
     try {
       const res = await loginEo(data);
       createCookie('token', res.token);
-      navigate('/createEvent');
+      navigate('/userHome');
     } catch (error) {
       console.log(error);
     }
