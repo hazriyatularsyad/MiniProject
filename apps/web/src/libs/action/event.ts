@@ -8,6 +8,7 @@ export const getEvent = async () => {
     
   const res = await fetch('http://localhost:8000/api/event/getEvent', {
     method: 'GET',
+    next: { revalidate: 60, tags: ['event']},
     headers: {
       'Content-Type': 'application/json',
     },

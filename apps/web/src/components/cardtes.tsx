@@ -1,3 +1,4 @@
+import { formatDate } from '@/app/utils/formatDate';
 import { getEvent } from '@/libs/action/event';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -21,9 +22,9 @@ export default async function Cardtes({ name }: { name: IEvent }) {
 
   return (
     <div className=" mt-4">
-      <div className="bg-white flex flex-col w-[30vh] h-full rounded-xl overflow-hidden ">
+      <div className="bg-white w-[35vh] h-full rounded-xl overflow-hidden ">
         <Image
-          src="/jjf3.jpg"
+          src='/hmrsn.jpg'
           className="w-full hover:scale-110 duration-300"
           width={400}
           height={400}
@@ -31,7 +32,7 @@ export default async function Cardtes({ name }: { name: IEvent }) {
         />
         <div className="flex flex-col text-black py-4 ml-4">
           <p className='font-bold text-xl'>{name.name}</p>
-          <p>{name.date}</p>
+          <p>{formatDate(name.date)}</p>
           <p>{name.location}</p>
         </div>
       </div>

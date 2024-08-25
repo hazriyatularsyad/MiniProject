@@ -9,7 +9,7 @@ export default async function ListEvent() {
   const data = ressult.event;
 
   return (
-    <div className="bg-black pt-2 pb-8">
+    <div className="bg-black pt-2 pb-8 flex">
       {data.map((resp) => (
         <div key={resp.id} className="mx-auto w-3/4">
           <div className="">
